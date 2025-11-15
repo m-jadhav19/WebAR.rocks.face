@@ -75,7 +75,7 @@ function main(){ // entry point
         console.log('ERROR in main.js: ', err);
         return;
       }
-      WebARRocksFaceThreeHelper.resize(window.innerWidth, window.innerHeight);
+      WebARRocksFaceThreeHelper.resize(Math.min(window.innerWidth, window.innerHeight), window.innerHeight);
       _flexibleMaskHelper = WebARRocksFaceFlexibleMaskHelper;
 
       // threeInstances are the THREE.js instances initialized by the helper

@@ -603,10 +603,10 @@ function main(){
   _canvasVideo = document.getElementById('WebARRocksFaceCanvasVideo');
   
   WebARRocksResizer.size_canvas({
+    isFullScreen: false,
     canvas: _canvasVideo,
     overlayCanvas: [_canvasAR],
-    callback: start,
-    isFullScreen: true
+    callback: start
   });
 }
 

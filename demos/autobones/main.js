@@ -41,8 +41,8 @@ function main(){
   _canvases.face = document.getElementById('WebARRocksFaceCanvas');
   _canvases.three = document.getElementById('threeCanvas');
 
-  resize_canvasFullScreen(_canvases.face);
-  resize_canvasFullScreen(_canvases.three);
+  resize_canvas(_canvases.face);
+  resize_canvas(_canvases.three);
 
   init_WebarRocksFace(_canvases.face, _canvases.three, 
     { // spec for WEBARROCKSFACE
@@ -61,16 +61,16 @@ function setup_UI(){
 
   // handle orientation change or window resizing:
   const resizeCallback = function(){
-    resize(window.innerWidth, window.innerHeight);
+    resize(Math.min(window.innerWidth,window.innerHeight), window.innerHeight);
   }
   window.addEventListener('orientationchange', resizeCallback);
   window.addEventListener('resize', resizeCallback);
 }
 
 
-function resize_canvasFullScreen(cv){
+function resize_canvas(cv){
   const dpr = window.devicePixelRatio || 1;
-  const w = window.innerWidth * dpr;
+  const w = Math.min(window.innerWidth, window.innerHeight) * dpr;
   const h = window.innerHeight * dpr;
   cv.width = w;
   cv.height = h;

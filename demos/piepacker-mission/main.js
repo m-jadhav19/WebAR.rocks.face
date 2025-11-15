@@ -52,7 +52,7 @@ function start() {
 
   WebARRocksFaceThreeHelper.init({
     spec: {
-      NNCPath: "../../neuralNets/NN_FACE_0.json",
+      NNCPath: "../../neuralNets/NN_FACE_2.json",
     },
     canvas: canvasFace,
     canvasThree: canvasThree,
@@ -82,7 +82,7 @@ function start() {
         console.log("ERROR in main.js: ", err);
         return;
       }
-      WebARRocksFaceThreeHelper.resize(window.innerWidth, window.innerHeight);
+      WebARRocksFaceThreeHelper.resize(Math.min(window.innerWidth, window.innerHeight), window.innerHeight);
       _flexibleMaskHelper = WebARRocksFaceFlexibleMaskHelper;
 
       // threeInstances are the THREE.js instances initialized by the helper
@@ -324,8 +324,9 @@ function init_triggers() {
 
 function main() {
   WebARRocksResizer.size_canvas({
+    isFullScreen: false,
     canvasId: "WebARRocksFaceCanvas",
-    callback: start,
+    callback: start
   });
 }
 

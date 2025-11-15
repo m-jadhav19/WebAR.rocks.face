@@ -179,7 +179,7 @@ function main(){
   // Set the canvas to fullscreen
   // and add an event handler to capture window resize:
   WebARRocksResizer.size_canvas({
-    isFullScreen: true,
+    isFullScreen: false,
     canvas: _canvases.face,     // WebARRocksFace main canvas
     overlayCanvas: [_canvases.three], // other canvas which should be resized at the same size of the main canvas
     callback: start,

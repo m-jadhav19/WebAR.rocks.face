@@ -266,10 +266,10 @@ function main(){
   _selectedDOMColorButton = document.getElementById('colorRed');
 
   WebARRocksResizer.size_canvas({
+    isFullScreen: false,
     canvas: _canvasVideo,
     overlayCanvas: [_canvasAR],
-    callback: start,
-    isFullScreen: true
+    callback: start
   });
 }
 

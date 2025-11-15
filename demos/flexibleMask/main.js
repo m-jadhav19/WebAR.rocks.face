@@ -89,7 +89,7 @@ function main(){
   // Init WebAR.rocks.face through the helper:
   WebARRocksFaceThreeHelper.init({
     spec:  {
-      NNCPath: '../../neuralNets/NN_FACE_0.json'
+      NNCPath: '../../neuralNets/NN_FACE_2.json'
       /*,videoSettings: {
         idealWidth: 1280,
         idealHeight: 800
@@ -111,7 +111,7 @@ function main(){
         console.log('ERROR in main.js: ', err);
         return;
       }
-      WebARRocksFaceThreeHelper.resize(window.innerWidth, window.innerHeight);
+      WebARRocksFaceThreeHelper.resize(Math.min(window.innerWidth, window.innerHeight), window.innerHeight);
       _flexibleMaskHelper = WebARRocksFaceFlexibleMaskHelper;
 
       // threeInstances are the THREE.js instances initialized by the helper

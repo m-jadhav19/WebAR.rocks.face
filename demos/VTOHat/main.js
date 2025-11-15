@@ -58,7 +58,7 @@ function main(){
     canvasThree: canvasThree,
 
     // initial canvas dimensions:
-    width: window.innerWidth,
+    width: Math.min(window.innerHeight, window.innerWidth),
     height: window.innerHeight,
 
     // The occluder is a placeholder for the head. It is rendered with a transparent color
@@ -86,7 +86,7 @@ function main(){
 
     // handle orientation change or window resizing:
     const resizeCallback = function(){
-      WebARRocksMirror.resize(window.innerWidth, window.innerHeight);
+      WebARRocksMirror.resize(Math.min(window.innerWidth, window.innerHeight), window.innerHeight);
     }
     window.addEventListener('orientationchange', resizeCallback);
     window.addEventListener('resize', resizeCallback);

@@ -22,13 +22,20 @@
     <script src="./main.js"></script>
 
     <style type="text/css">
+      body {
+        background-color: #333;
+      }
+
       #WebARRocksFaceCanvasAR, #WebARRocksFaceCanvasVideo {
         position: fixed;
         width: 100vw;
+        height: 100%;
+        max-width: 100vh;
+
         top: 0;
-        left: 0;
+        left: 50%;
         /* mirror the canvas: */
-        transform: rotateY(180deg);
+        transform: rotateY(180deg) translate(50%);
       }
 
       #WebARRocksFaceCanvasVideo {
